@@ -3,7 +3,6 @@
   <a href="#!/question/{{QC.question._id}}/answer">Answer this Question</a>
   <h3>{{QC.question.question}}</h3>
   <h5>{{QC.question.description}}</h5>
-  {{QC.question}}
   <div ng-repeat="answer in QC.question.answers | orderBy:'likes'">
     <p>{{answer.author}}</p><br>
     <p>{{answer.answer}}</p><br>
