@@ -21,7 +21,7 @@ module.exports = {
       else{
         return res.json(question)
       }
-    })
+    }).populate('answers')
   },
   create: function(req, res){
     User.findById(req.params.id , function(err, user){

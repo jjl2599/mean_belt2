@@ -4,9 +4,10 @@
   <h3>{{QC.question.question}}</h3>
   <h5>{{QC.question.description}}</h5>
   <div ng-repeat="answer in QC.question.answers | orderBy:'likes'">
-    <p>{{answer.author}}</p><br>
-    <p>{{answer.answer}}</p><br>
-    <p>{{answer.likes}} likes</p>
+    <h4>{{answer.author}} Answered:</h4>
+    <h5>{{answer.answer}}</h5>
+    <strong>Detail:</strong>{{answer.details}}<br>
+    {{answer.likes}} likes
     <button ng-click='AC.like(AC.answer._id)'>Like!</button>
   </div>
 </div>

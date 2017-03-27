@@ -58,7 +58,7 @@ module.exports = {
             "errors": "invald question"
           })
         }
-        question.answers.push(answer);
+        question.answers.push(answer._id);
         question.save(function(err,question){
           if(err){
             return res.json(err);
