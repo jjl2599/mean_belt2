@@ -16,5 +16,5 @@ module.exports = function(app){
 	app.post('/answers', Answers.create);
 	app.get('/answers', Answers.index);
 	app.get('/answers/:id', Answers.find);
-	app.put('/answers/like', Answers.like);
+	app.patch('/answers/:id', Answers.like);
 }

@@ -9,7 +9,10 @@ app.factory('AnswerFactory', function($http){
 		$http.post('/answers', newAnswer).then(callback);
 	}
 
-  //factory.like{}
+	factory.like = function(id, callback){
+		$http.patch(`/answers/${id}`).then(callback);
+	}
+
 
 	return factory;
 })
