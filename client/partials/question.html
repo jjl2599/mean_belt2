@@ -1,0 +1,13 @@
+<div ng-controller='AnswersController as AC' ng-init="QC.find();AC.index()">
+  <a href="#!/main">Home</a>
+  <a href="#!/question/{{QC.question._id}}/answer">Answer this Question</a>
+  <h3>{{QC.question.question}}</h3>
+  <h5>{{QC.question.description}}</h5>
+  {{QC.question}}
+  <div ng-repeat="answer in QC.question.answers | orderBy:'likes'">
+    <p>{{answer.author}}</p><br>
+    <p>{{answer.answer}}</p><br>
+    <p>{{answer.likes}} likes</p>
+    <button ng-click='AC.like(AC.answer._id)'>Like!</button>
+  </div>
+</div>

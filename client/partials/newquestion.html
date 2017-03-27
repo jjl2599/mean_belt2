@@ -1,0 +1,14 @@
+<a href="#!/main">Home</a>
+<div ng-controller='UsersController as UC'>
+  <a href="" ng-click="UC.logout()">Logout</a>
+</div>
+<h3>New Question</h3>
+<p ng-repeat="error in QC.errors">{{error}}</p>
+<br>
+
+<form ng-submit="QC.create(QC.newQuestion)">
+    <p>Question: <input ng-model= "QC.newQuestion.question" type="text"></p>
+    <p>Description(Optional): <input ng-model= "QC.newQuestion.description" type="text"></p>
+    <input type="submit" value="Submit">
+</form>
+<button><a href="#!/main">Cancel</a></button>

@@ -1,0 +1,25 @@
+<div ng-controller='QuestionsController as QC' ng-init="QC.index()">
+	<div class="userbar">
+		<h3>Hi {{UC.current_user.firstname}}!</h3>
+		<a href="" ng-click="UC.logout()">Logout</a>
+		<a href="#!/createquestion">Add a Question</a>
+	</div>
+
+	<input type="text" ng-model="question_filter" placeholder="Filter Questions...">
+	<table>
+		<tr>
+			<th>Question</th>
+			<th>Answers</th>
+			<th>Action</th>
+		</tr>
+		<tr ng-repeat="question in QC.questions| filter: question_filter">
+			<td>{{question.question}}</td>
+			<td><center>{{question.answers.length}}</center></td>
+			<td>
+				<a href="#!/question/{{question._id}}">Show</a>
+				<a href="#!/question/{{question._id}}/answer">Answer</a>
+			</td>
+		</tr>
+	</table>
+
+</div>

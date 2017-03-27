@@ -1,0 +1,18 @@
+<div ng-controller='QuestionsController as QC' ng-init="QC.find()">
+  <a href="#!/main">Home</a>
+  <a href="#!/question/{{QC.question._id}}">Go Back to Question</a>
+  <div ng-controller='UsersController as UC'>
+    <a href="" ng-click="UC.logout()">Logout</a>
+  </div>
+  <h3>{{QC.question.question}}</h3>
+  <h5>{{QC.question.description}}</h5>
+  <p ng-repeat="error in AC.errors track by $index">{{error}}</p>
+  <br>
+  <form ng-submit="AC.create(AC.newAnswer)">
+
+      <p>Answer: <input ng-model= "AC.newAnswer.answer" type="text"></p>
+      <p>Supporting details for your answer(Optional): <input ng-model= "AC.newAnswer.details" type="text"></p>
+      <input type="submit" value="Submit">
+  </form>
+  <button><a href="#!/main">Cancel</a></button>
+</div>
