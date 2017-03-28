@@ -4,8 +4,8 @@ app.controller('AnswersController', ["AnswerFactory","UserFactory","QuestionFact
 	self.answers = [];
 
 	self.find = function(){
-		QuestionFactory.find($routeParams.id, function(question){
-      self.question = question.data
+		AnswerFactory.find($routeParams.id, function(answer){
+      self.answer = answer.data
 		})
 	}
 

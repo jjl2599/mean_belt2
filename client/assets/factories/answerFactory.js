@@ -5,6 +5,10 @@ app.factory('AnswerFactory', function($http){
 		$http.get('/answers').then(callback);
 	}
 
+	factory.find = function(id, callback){
+    $http.get('/answers/' + id).then(callback)
+  }
+
 	factory.create = function(newAnswer, callback){
 		$http.post('/answers', newAnswer).then(callback);
 	}

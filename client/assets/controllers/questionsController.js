@@ -12,7 +12,6 @@ app.controller('QuestionsController',['QuestionFactory', 'UserFactory', 'AnswerF
 	self.find = function(){
 		QuestionFactory.find($routeParams.id, function(question){
       self.question = question.data
-			// self.answer =
 		})
 	}
 
@@ -26,8 +25,5 @@ app.controller('QuestionsController',['QuestionFactory', 'UserFactory', 'AnswerF
 		})
 	}
 
-	// self.getAnswers = function(){
-	//
-	// }
 
 }]);

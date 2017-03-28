@@ -14,6 +14,7 @@ module.exports = {
           "errors": "invald answer"
         })
       }
+      console.log("Like incremented")
       answer.likes++;
       answer.save(function(err,answer){
         if(err){
