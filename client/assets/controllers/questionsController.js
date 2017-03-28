@@ -12,9 +12,17 @@ app.controller('QuestionsController',['QuestionFactory', 'UserFactory', 'AnswerF
 	self.find = function(){
 		QuestionFactory.find($routeParams.id, function(question){
       self.question = question.data
-			console.log(self.question)
+			console.log(self.question);
 		})
 	}
+
+	self.like = function(id){
+		console.log('id: ', id);
+		AnswerFactory.like(id, function(res){
+			self.find();
+		});
+	}
+
 
 	self.create = function(newQuestion){
 		newQuestion.author = UserFactory.current_user.firstname;

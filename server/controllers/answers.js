@@ -14,13 +14,14 @@ module.exports = {
           "errors": "invald answer"
         })
       }
-      console.log(answer);
+      console.log('before: ', answer);
       console.log("Like incremented")
       answer.likes++;
       answer.save(function(err,answer){
         if(err){
           return res.json(err);
         }
+        console.log('after: ', answer);
         return res.json(answer);
       })
     })
