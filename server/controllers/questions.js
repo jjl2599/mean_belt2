@@ -4,6 +4,7 @@ var Question = mongoose.model('Question');
 
 module.exports = {
   index: function(req,res){
+    console.log('executing index function...')
     Question.find({}).exec(function(err,questions){
       if(err){
         return res.json(err);
@@ -25,6 +26,7 @@ module.exports = {
     })
   },
   create: function(req, res){
+    console.log('executing create function...');
     User.findById(req.params.id , function(err, user){
       var question = new Question(req.body);
       question.save(function(err,question){
