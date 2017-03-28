@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var QuestionSchema = mongoose.Schema({
   author:{
     type: String,
-    require:true
+    required:true
   },
 	question: {
 		type: String,

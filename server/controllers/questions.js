@@ -14,6 +14,7 @@ module.exports = {
     })
   },
   find: function(req,res){
+    console.log('executing find function...')
     Question.findById(req.params.id).populate('answers').exec(function(err,question){
       if(err){
         return res.json(err)
@@ -35,7 +36,5 @@ module.exports = {
         }
       })
     })
-  },
-
-
+  }
 }
