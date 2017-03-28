@@ -16,6 +16,7 @@ app.controller('AnswersController', ["AnswerFactory","UserFactory","QuestionFact
 	}
 
 	self.like = function(id){
+		console.log('id: ', id);
     AnswerFactory.like(id, function(res){
       self.find();
     });
