@@ -14,14 +14,14 @@ module.exports = {
     })
   },
   find: function(req,res){
-    Question.findById(req.params.id, function(err,question){
+    Question.findById(req.params.id).populate('answers').exec(function(err,question){
       if(err){
         return res.json(err)
       }
       else{
         return res.json(question)
       }
-    }).populate('answers')
+    })
   },
   create: function(req, res){
     User.findById(req.params.id , function(err, user){
